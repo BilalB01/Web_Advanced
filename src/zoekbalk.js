@@ -1,20 +1,62 @@
 
+
 const toonPersonages = (lijst, container) => {
+    // haal huidige favoriete locaties uit localStorage (of begin met lege lijst)
+    const favorieteLocaties = JSON.parse(localStorage.getItem('favorieteLocaties')) || [];
+  
+    // de container wordt lee ggemaakt 
     container.innerHTML = '';
+  
     lijst.forEach(({ name, image, status, species, gender, origin }) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `
+      // kijk of deze locatie in de favorieten zit
+      const isFavoriet = favorieteLocaties.includes(origin.name);
+  
+      // maak de kaart
+      const card = document.createElement('div');
+      card.classList.add('card');
+  
+      // hier voeg ik een ster logo  bij de kaart via control + command + spatie 
+      card.innerHTML = `
         <h3>${name}</h3>
         <img src="${image}" alt="${name}">
         <p><strong>Status:</strong> ${status}</p>
         <p><strong>Soort:</strong> ${species}</p>
         <p><strong>Geslacht:</strong> ${gender}</p>
-        <p><strong>Afkomst:</strong> ${origin.name}</p>
+        <p>
+          <strong>Afkomst:</strong> ${origin.name}
+          <button class="fav-knop" data-locatie="${origin.name}" title="Markeer als favoriet">
+            ${isFavoriet ? '★' : '☆'}
+          </button>
+        </p>
       `;
-        container.appendChild(card);
+  
+      // voeg de kaart toe aan de pagina
+      container.appendChild(card);
     });
-};
+  
+    // click-events toegevoegd aan alle ster knoppen
+    const sterren = document.querySelectorAll('.fav-knop');
+    sterren.forEach(knop => {
+      knop.addEventListener('click', () => {
+        const locatie = knop.dataset.locatie;
+        let favorieten = JSON.parse(localStorage.getItem('favorieteLocaties')) || [];
+  
+        // voeg toe of verwijder uit favorieten
+        if (favorieten.includes(locatie)) {
+          favorieten = favorieten.filter(l => l !== locatie);
+        } else {
+          favorieten.push(locatie);
+        }
+  
+        // sla nieuwe favorietenlijst op
+        localStorage.setItem('favorieteLocaties', JSON.stringify(favorieten));
+  
+        // herteken de kaarten om de ster bij te werken
+        toonPersonages(lijst, container);
+      });
+    });
+  };
+  
 
 
 const filterCharacters = (characters, term) => {
