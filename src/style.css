@@ -1,0 +1,11 @@
+.fav-knop {
+    font-size: 1.3em;
+    background: none;
+    border: none;
+    color: gold;
+    cursor: pointer;
+  }
+  .fav-knop:hover {
+    transform: scale(1.2);
+  }
+  
