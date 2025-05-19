@@ -1,37 +1,59 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rick and Morty</title>
-    <link rel="stylesheet " href="/src/style.css">
-  </head>
-  <body>
-    <header> 
-      <h1>Rick and Morty</h1>
-      <input type="text" id="zoekveld" placeholder="Rick, Morty,Summer, ... ">
-      <button id="search-button">ZOEKEN</button>
-      <button id="favorieten">Favorieten </button>
 
-      <select id="sorteer-optie">
-        <option value="naam-az">Naam: A-Z</option>
-        <option value="naam-za">Naam: Z-A</option>
-        <option value="status-az">Status: A-Z</option>
-        <option value="species-az">Soort: A-Z</option>
-        <option value="origin-az">Afkomst: A-Z</option>
-      </select>
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rick and Morty</title>
+  <link rel="stylesheet " href="/src/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Rick and Morty</h1>
+    <input type="text" id="zoekveld" placeholder="Rick, Morty,Summer, ... ">
+    <button id="search-button">ZOEKEN</button>
+    <button id="favorieten">Favorieten </button>
+
+    <label for="sorteer-optie"> Soorteer op:</label>
+    <select id="sorteer-optie">
+      <option value="naam-az">Naam: A-Z</option>
+      <option value="naam-za">Naam: Z-A</option>
+      <option value="status-az">Status: A-Z</option>
+      <option value="species-az">Soort: A-Z</option>
+      <option value="origin-az">Afkomst: A-Z</option>
+    </select>
+
+    <label for="status-filter">Status:</label>
+    <select id="status-filter">
+      <option value="alle">Alle</option>
+      <option value="Alive">Alive</option>
+      <option value="Dead">Dead</option>
+      <option value="unknown">Unknown</option>
+    </select>
+
+    <label for="geslacht-filter">Geslacht:</label>
+    <select id="geslacht-filter">
+      <option value="alle">Alle</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Genderless">Genderless</option>
+      <option value="unknown">Unknown</option>
+    </select>
 
 
 
 
 
-    </header>
-   
-    
-    <div id="character-container"></div>
 
-    <script type="module" src="/src/main.js"></script>
-    
-  </body>
+
+  </header>
+
+
+  <div id="character-container"></div>
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
 </html>

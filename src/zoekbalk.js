@@ -23,12 +23,12 @@ const filterCharacters = (characters, term) => {
     );
 };
 
-// sorteren van personnages op basis van geslecteerde optie  aan de hand van een nieuwe functie 
+
 const sortCharacters = (characters, sorteerWaarde) => {
     return characters.slice().sort((a, b) => {
         switch (sorteerWaarde) {
             case "naam-az":
-                return a.name.localeCompare(b.name); // door d localeCompare worden de woorden alfabetische vergeleken 
+                return a.name.localeCompare(b.name);
             case "naam-za":
                 return b.name.localeCompare(a.name);
             case "status-az":
@@ -45,21 +45,46 @@ const sortCharacters = (characters, sorteerWaarde) => {
 
 
 
-export const activeerZoekfunctie = (characters, zoekInput, container, sorteerOptie) => {
+export const activeerZoekfunctie = (characters, zoekInput, container, sorteerSelect) => {
+    const statusFilter = document.getElementById('status-filter');
+    const geslachtFilter = document.getElementById('geslacht-filter');
+  
+    //  functie die alles combineert
     const updateResultaat = () => {
-      const zoekterm = zoekInput.value.trim();
-      const sorteerWaarde = sorteerOptie.value;
+      const zoekterm = zoekInput.value.trim().toLowerCase();
+      const sorteerWaarde = sorteerSelect.value;
+      const statusWaarde = statusFilter.value;
+      const genderWaarde = geslachtFilter.value;
   
-      const gefilterd = filterCharacters(characters, zoekterm);
-      const gesorteerd = sortCharacters(gefilterd, sorteerWaarde);
+      // Filteren op naam
+      let resultaat = characters.filter(character =>
+        character.name.toLowerCase().includes(zoekterm)
+      );
   
-      toonPersonages(gesorteerd, container);
+      // Filteren op status
+      if (statusWaarde !== "alle") {
+        resultaat = resultaat.filter(char => char.status === statusWaarde);
+      }
+  
+      // Filter op geslacht
+      if (genderWaarde !== "alle") {
+        resultaat = resultaat.filter(char => char.gender === genderWaarde);
+      }
+  
+      // Sorteer
+      resultaat = sortCharacters(resultaat, sorteerWaarde);
+  
+      // resultaat wordt getoont
+      toonPersonages(resultaat, container);
     };
   
+    // Eventlisteners
     zoekInput.addEventListener('input', updateResultaat);
-    sorteerOptie.addEventListener('change', updateResultaat);
+    sorteerSelect.addEventListener('change', updateResultaat);
+    statusFilter.addEventListener('change', updateResultaat);
+    geslachtFilter.addEventListener('change', updateResultaat);
   
-   
-    toonPersonages(sortCharacters(characters, sorteerOptie.value), container);
+    //Start
+    updateResultaat();
   };
   
