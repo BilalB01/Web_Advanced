@@ -8,7 +8,7 @@
   .fav-knop:hover {
     transform: scale(1.2);
   }
-  
+
   :root {
     --bg-kleur: #ffffff;
     --tekst-kleur: #000000;
@@ -34,6 +34,88 @@
     --tekst-kleur: #ffffff;
     --kaart-kleur: #1e1e1e;
   }
+
+  :root {
+    --bg-kleur: #ffffff;
+    --tekst-kleur: #000000;
+    --kaart-kleur: #f4f4f4;
+  }
+  
+  body.donker {
+    --bg-kleur: #1e1e1e;
+    --tekst-kleur: #ffffff;
+    --kaart-kleur: #2a2a2a;
+  }
+  
+  header {
+    padding: 1.5rem;
+    background-color: var(--kaart-kleur);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+  }
+  
+  .header-top h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .header-controls {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .header-controls input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .header-controls button,
+  .header-controls select,
+  #thema-toggle {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--bg-kleur);
+    color: var(--tekst-kleur);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #thema-toggle {
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--tekst-kleur);
+  }
+  
+  .header-controls button:hover,
+  .header-controls select:hover,
+  #thema-toggle:hover {
+    background-color: var(--kaart-kleur);
+  }
+  
+
   
 
   

@@ -9,13 +9,22 @@
 </head>
 
 <body>
-  <header>
-    <h1>Rick and Morty</h1>
-    <input type="text" id="zoekveld" placeholder="Rick, Morty,Summer, ... ">
-    <button id="search-button">ZOEKEN</button>
-    <button id="favorieten">Favorieten </button>
+  <!-- Header -->
+<header>
+  <div class="header-top">
+    <div class="logo-title">
+      <img src="./image/Video to animated GIF converter.gif" alt="Rick and Morty Logo" class="logo">
+      <h1>Rick and Morty</h1>
+    </div>
+    <button id="thema-toggle" title="Thema wisselen">🌓 Thema</button>
+  </div>
 
-    <label for="sorteer-optie"> Soorteer op:</label>
+  <div class="header-controls">
+    <input type="text" id="zoekveld" placeholder="Rick, Morty, Summer..." />
+    <button id="search-button">ZOEKEN</button>
+    <button id="favorieten">Favorieten</button>
+
+    <label for="sorteer-optie">Sorteer op:</label>
     <select id="sorteer-optie">
       <option value="naam-az">Naam: A-Z</option>
       <option value="naam-za">Naam: Z-A</option>
@@ -40,15 +49,9 @@
       <option value="Genderless">Genderless</option>
       <option value="unknown">Unknown</option>
     </select>
+  </div>
+</header>
 
-
-
-    <button id="thema-toggle" title="Wissel thema">🌓 Thema</button>
-
-
-
-
-  </header>
 
 
   <div id="character-container"></div>
