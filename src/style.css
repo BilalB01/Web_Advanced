@@ -9,3 +9,31 @@
     transform: scale(1.2);
   }
   
+  :root {
+    --bg-kleur: #ffffff;
+    --tekst-kleur: #000000;
+    --kaart-kleur: #f0f0f0;
+  }
+  
+  body {
+    background-color: var(--bg-kleur);
+    color: var(--tekst-kleur);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .card {
+    background-color: var(--kaart-kleur);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  body.donker {
+    --bg-kleur: #121212;
+    --tekst-kleur: #ffffff;
+    --kaart-kleur: #1e1e1e;
+  }
+  
+
+  
