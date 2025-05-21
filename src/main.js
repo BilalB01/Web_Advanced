@@ -23,21 +23,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Favorieten tonen bij klikken op de Favorieten knop
+
 document.getElementById("favorieten").addEventListener("click", async () => {
     const container = document.getElementById("character-container");
     const favorieten = JSON.parse(localStorage.getItem("favorieteIDs")) || [];
 
-    // Leeg het scherm
+    
     container.innerHTML = "";
 
-    // Geen favorieten geselecteerd
+   
     if (favorieten.length === 0) {
         container.innerHTML = "<p>Je hebt nog geen favorieten geselecteerd.</p>";
         return;
     }
 
-    // Voor elk ID: haal bijhorende character info op
+    
     for (let id of favorieten) {
         try {
             const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
@@ -61,11 +61,11 @@ document.getElementById("favorieten").addEventListener("click", async () => {
 });
 
 
-// thema wisselen en onthouden
+
 const body = document.body;
 const themaKnop = document.getElementById("thema-toggle");
 
-// zet vorig gekozen thema bij opstart
+
 if (localStorage.getItem("thema") === "donker") {
     body.classList.add("donker");
 }
@@ -73,7 +73,7 @@ if (localStorage.getItem("thema") === "donker") {
 themaKnop.addEventListener("click", () => {
     body.classList.toggle("donker");
 
-    // voorkeur wordt bijgehouden 
+     
     if (body.classList.contains("donker")) {
         localStorage.setItem("thema", "donker");
     } else {

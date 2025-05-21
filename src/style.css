@@ -48,10 +48,22 @@
   }
   
   header {
-    padding: 1.5rem;
-    background-color: var(--kaart-kleur);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    height: 100vh; 
+    background-image: url('/image/rickandmorty.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
   }
+  
+  
   
   .header-top {
     display: flex;
@@ -64,6 +76,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 100%;
+    max-height: 120px;
+    object-fit: contain;
   }
   
   .logo {
@@ -71,6 +86,11 @@
     width: auto;
     border-radius: 10px;
   }
+  .header-logo {
+    width: 200px;
+    height: auto;
+  }
+  
   
   .header-top h1 {
     font-size: 2rem;
