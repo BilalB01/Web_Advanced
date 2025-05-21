@@ -21,14 +21,6 @@
     transition: background-color 0.3s, color 0.3s;
   }
   
-  .card {
-    background-color: var(--kaart-kleur);
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
   body.donker {
     --bg-kleur: #121212;
     --tekst-kleur: #ffffff;
@@ -151,17 +143,20 @@
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
   }
   
   .card:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 50px #39ff14;
+    border: 2px solid #39ff14;
   }
+  
   
   .card img {
     width: 100%;
@@ -175,6 +170,7 @@
     color: var(--tekst-kleur);
   }
   
+
   .status-badge {
     display: inline-block;
     padding: 0.3rem 0.6rem;
