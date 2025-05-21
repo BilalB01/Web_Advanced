@@ -193,23 +193,38 @@
     background-color: #6b7280;
   }
   
-/*  top knop css  */
+
   .scroll-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #39ff14;
-    color: black;
+    bottom: 10px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: #0f0f0f; 
+    box-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    display: none;
     z-index: 999;
+    display: none;
   }
   
- 
-
+  .scroll-top img {
+    width: 80px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  
+  .scroll-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00ff99, 0 0 40px #00ff99;
+    background-color: #00ff99;
+  }
   
