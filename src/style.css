@@ -138,4 +138,62 @@
 
   
 
+   /* body kaarten  */
+   #character-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: var(--kaart-kleur);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  }
+  
+  .card img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    margin: 0.5rem 0;
+    color: var(--tekst-kleur);
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .status-Alive {
+    background-color: #22c55e;
+  }
+  
+  .status-Dead {
+    background-color: #ef4444;
+  }
+  
+  .status-unknown {
+    background-color: #6b7280;
+  }
   

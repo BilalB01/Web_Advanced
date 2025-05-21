@@ -17,17 +17,21 @@ const toonPersonages = (lijst, container) => {
         card.classList.add('card');
 
 
+        const badgeClass = `status-badge status-${status === "unknown" ? "unknown" : status}`;
+
         card.innerHTML = `
-        <h3>${name}</h3>
-        <img src="${image}" alt="${name}">
-        <p><strong>Status:</strong> ${status}</p>
-        <p><strong>Soort:</strong> ${species}</p>
-        <p><strong>Geslacht:</strong> ${gender}</p>
-        <p><strong>Afkomst:</strong> ${origin.name}</p>
-        <button class="fav-knop" data-id="${id}" title="Markeer als favoriet">
-          ${isFavoriet ? '★' : '☆'}
-        </button>
-      `;
+            <img src="${image}" alt="${name}">
+            <h3>${name}</h3>
+            <div class="${badgeClass}">${status}</div>
+            <p><strong>Soort:</strong> ${species}</p>
+            <p><strong>Geslacht:</strong> ${gender}</p>
+            <p><strong>Afkomst:</strong> ${origin.name}</p>
+            <button class="fav-knop" data-id="${id}" title="Markeer als favoriet">
+                 ${isFavoriet ? '★' : '☆'}
+            </button>
+             `;
+
+
         container.appendChild(card);
     });
 

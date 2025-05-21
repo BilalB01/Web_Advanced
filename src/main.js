@@ -28,16 +28,16 @@ document.getElementById("favorieten").addEventListener("click", async () => {
     const container = document.getElementById("character-container");
     const favorieten = JSON.parse(localStorage.getItem("favorieteIDs")) || [];
 
-    
+
     container.innerHTML = "";
 
-   
+
     if (favorieten.length === 0) {
         container.innerHTML = "<p>Je hebt nog geen favorieten geselecteerd.</p>";
         return;
     }
 
-    
+
     for (let id of favorieten) {
         try {
             const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
@@ -45,14 +45,17 @@ document.getElementById("favorieten").addEventListener("click", async () => {
 
             const card = document.createElement("div");
             card.classList.add("card");
+            const badgeClass = `status-badge status-${character.status === "unknown" ? "unknown" : character.status}`;
+
             card.innerHTML = `
-        <h3>${character.name}</h3>
-        <img src="${character.image}" alt="${character.name}">
-        <p><strong>Status:</strong> ${character.status}</p>
-        <p><strong>Soort:</strong> ${character.species}</p>
-        <p><strong>Geslacht:</strong> ${character.gender}</p>
-        <p><strong>Afkomst:</strong> ${character.origin.name}</p>
-      `;
+            <img src="${character.image}" alt="${character.name}">
+                <h3>${character.name}</h3>
+                <div class="${badgeClass}">${character.status}</div>
+                <p><strong>Soort:</strong> ${character.species}</p>
+                <p><strong>Geslacht:</strong> ${character.gender}</p>
+                <p><strong>Afkomst:</strong> ${character.origin.name}</p>
+                `;
+
             container.appendChild(card);
         } catch (err) {
             console.error("Fout bij ophalen van favoriet personage:", err);
@@ -73,7 +76,7 @@ if (localStorage.getItem("thema") === "donker") {
 themaKnop.addEventListener("click", () => {
     body.classList.toggle("donker");
 
-     
+
     if (body.classList.contains("donker")) {
         localStorage.setItem("thema", "donker");
     } else {
