@@ -193,3 +193,23 @@
     background-color: #6b7280;
   }
   
+/*  top knop css  */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+  }
+  
+ 
+
+  

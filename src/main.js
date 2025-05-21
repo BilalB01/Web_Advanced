@@ -86,3 +86,21 @@ themaKnop.addEventListener("click", () => {
 
 
 
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+// toon de knop als je 600px naar beneden scrolt
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+
+// scroll smooth(langzaam) naar boven
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
