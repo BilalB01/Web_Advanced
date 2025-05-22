@@ -89,26 +89,30 @@ export const activeerZoekfunctie = (characters, zoekInput, container, sorteerSel
         const sorteerWaarde = sorteerSelect.value;
         const statusWaarde = statusFilter.value;
         const genderWaarde = geslachtFilter.value;
-
+      
         let resultaat = characters.filter(character =>
-            character.name.toLowerCase().includes(zoekterm)
+          character.name.toLowerCase().includes(zoekterm)
         );
-
-
-        if (statusWaarde !== "alle") {
-            resultaat = resultaat.filter(char => char.status === statusWaarde);
+      
+        // ✅ Filter op status (als gebruiker iets koos)
+        if (statusWaarde !== "default" && statusWaarde !== "alle") {
+          resultaat = resultaat.filter(char => char.status === statusWaarde);
         }
-
-
-        if (genderWaarde !== "alle") {
-            resultaat = resultaat.filter(char => char.gender === genderWaarde);
+      
+        // ✅ Filter op geslacht (als gebruiker iets koos)
+        if (genderWaarde !== "default" && genderWaarde !== "alle") {
+          resultaat = resultaat.filter(char => char.gender === genderWaarde);
         }
-
-        resultaat = sortCharacters(resultaat, sorteerWaarde);
-
-
+      
+        // ✅ Sorteer (alleen als gebruiker iets koos)
+        if (sorteerWaarde !== "default") {
+          resultaat = sortCharacters(resultaat, sorteerWaarde);
+        }
+      
+        // ✅ Toon het resultaat
         toonPersonages(resultaat, container);
-    };
+      };
+      
 
 
     zoekInput.addEventListener('input', updateResultaat);

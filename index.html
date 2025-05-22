@@ -9,55 +9,71 @@
 </head>
 
 <body>
-  
-<header>
-  <div class="header-top">
-    <div class="logo-title">
-      <img src="/image/Rick-and-Morty.png" alt="Rick and Morty Logo" class="header-logo">
+
+  <header>
+    <h1 class="visueel-verborgen">Rick and Morty Personage Explorer</h1>
+    <div class="header-top">
+      <div class="logo-blok">
+        <img src="/image/Rick-and-Morty.png" alt="Rick and Morty Logo" class="header-logo">
+        <p class="logo-tekst">Welkom in het multiversum van Rick & Morty
+          🌀 <em>Stap in het multiversum en ontdek je favoriete Rick & Morty personages!
+            Van gestoorde wetenschappers tot rare ruimtewezens — filter, zoek en sorteer om alles te vinden wat dit
+            universum te bieden heeft.
+            Of je nu fan bent van Morty’s onschuld of Rick’s geniale chaos, dit portaal laat je ze allemaal zien.</em>
+        </p>
+      </div>
+      <div class="thema-rechts">
+        <button id="thema-toggle" title="Thema wisselen">🌓 Thema</button>
+      </div>
     </div>
-    
-    <button id="thema-toggle" title="Thema wisselen">🌓 Thema</button>
-  </div>
 
-  <div class="header-controls">
-    <input type="text" id="zoekveld" placeholder="Rick, Morty, Summer..." />
-    <button id="search-button">ZOEKEN</button>
-    <button id="favorieten">Favorieten</button>
+    <div class="header-controls">
+      <div class="filters-links">
+        <select id="sorteer-optie" title="Sorteer op">
+          <option value="default" disabled selected hidden>Sorteer op...</option>
+          <option value="naam-az">Naam: A-Z</option>
+          <option value="naam-za">Naam: Z-A</option>
+          <option value="status-az">Status: A-Z</option>
+          <option value="species-az">Soort: A-Z</option>
+          <option value="origin-az">Afkomst: A-Z</option>
+        </select>
 
-    <label for="sorteer-optie">Sorteer op:</label>
-    <select id="sorteer-optie">
-      <option value="naam-az">Naam: A-Z</option>
-      <option value="naam-za">Naam: Z-A</option>
-      <option value="status-az">Status: A-Z</option>
-      <option value="species-az">Soort: A-Z</option>
-      <option value="origin-az">Afkomst: A-Z</option>
-    </select>
+        <select id="status-filter" title="Status filter">
+          <option value="default" disabled selected hidden>Status...</option>
+          <option value="alle">Alle</option>
+          <option value="Alive">Alive</option>
+          <option value="Dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
 
-    <label for="status-filter">Status:</label>
-    <select id="status-filter">
-      <option value="alle">Alle</option>
-      <option value="Alive">Alive</option>
-      <option value="Dead">Dead</option>
-      <option value="unknown">Unknown</option>
-    </select>
+        <select id="geslacht-filter" title="Geslacht filter">
+          <option value="default" disabled selected hidden>Geslacht...</option>
+          <option value="alle">Alle</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </div>
 
-    <label for="geslacht-filter">Geslacht:</label>
-    <select id="geslacht-filter">
-      <option value="alle">Alle</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Genderless">Genderless</option>
-      <option value="unknown">Unknown</option>
-    </select>
-  </div>
-</header>
+
+      <div class="zoeken-midden">
+        <input type="text" id="zoekveld" placeholder="Rick, Morty, Summer..." />
+      </div>
+
+      <div class="favorieten-rechts">
+        <button id="favorieten">Favorieten</button>
+      </div>
+    </div>
+
+  </header>
 
 
 
   <div id="character-container"></div>
- <button id="scrollTopBtn" class="scroll-top">
-  <img src="/image/rickandmortylogotop.png" alt="Portal">
-</button>
+  <button id="scrollTopBtn" class="scroll-top">
+    <img src="/image/rickandmortylogotop.png" alt="Portal" width="500" height="600">
+  </button>
 
 
   <script type="module" src="/src/main.js"></script>
