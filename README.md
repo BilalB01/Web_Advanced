@@ -152,6 +152,24 @@ project_portfolio/
 IV. Installatiehandleiding
 Clone eerst de repository via het volgende commando: git clone https://github.com/jouw-gebruikersnaam/rickmorty-explorer.git. Navigeer daarna naar de map met cd rickmorty-explorer. Installeer de nodige dependencies door npm install uit te voeren. Start vervolgens de ontwikkelserver via npm run dev. Zodra de server actief is, kun je de applicatie openen in je browser op http://localhost:5173.
 
+
 V. Screenshots van de applicatie
+
+1) Screenshot_header.png – De bovenste navigatiebalk met de titel, themaknoppen en favorietenknop.
+2) Screenshot_zoekbalk.png – De zoekbalk waarmee je live personages kunt opzoeken op naam.
+3) Screenshot_status.png – Filter op de status van personages (Alive, Dead, Unknown).
+4) Screenshot_geslacht.png – Filter op geslacht (Male, Female, Genderless, Unknown).
+5) Screenshot_sorteer_op.png – Sorteermenu om te sorteren op naam, soort, status of afkomst.
+6) Screenshot_favorieten.png – De lijst met geselecteerde favoriete personages, bewaard via localStorage.
+7) Screenshot_thema.png – Donker en licht thema met schakelknop.
+8) Screenshot_topknop.png – De 'scroll naar boven'-knop die verschijnt na scrollen.
+
+VI. Bronnen 
+
+ChatGPT: https://chatgpt.com/g/g-p-682b522587ac8191bad02623a77dea36-web-advanced/c/682b5295-131c-8001-86b1-83e7471a0d99 
+Cursus Web Advanced: https://canvas.ehb.be/courses/39258
+Rickandmorty: https://rickandmortyapi.com/documentation
+MDN: https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll 
+Stack Overflow: https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll
 
 
