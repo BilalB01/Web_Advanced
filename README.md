@@ -141,6 +141,16 @@ project_portfolio/
 │   ├── rickandmorty.gif
 │   └── rickandmortylogotop.png
 │
+├── screenshot_project/     # Bevat screenshots van de applicatie voor documentatie
+│   ├── Screenshot_favorieten.png
+│   ├── Screenshot_geslacht.png
+│   ├── Screenshot_header.png
+│   ├── Screenshot_sorteer_op.png
+│   ├── Screenshot_status.png
+│   ├── Screenshot_thema.png
+│   ├── Screenshot_topknop.png
+│   └── Screenshot_zoekbalk.png
+│
 ├── node_modules/           # NPM-modules (na `npm install`)
 │
 └── src/                    # Alle hoofdcode van het project
@@ -149,8 +159,9 @@ project_portfolio/
     ├── style.css           # Alle stijlen van de applicatie
 
 
+
 IV. Installatiehandleiding
-Clone eerst de repository via het volgende commando: git clone https://github.com/jouw-gebruikersnaam/rickmorty-explorer.git. Navigeer daarna naar de map met cd rickmorty-explorer. Installeer de nodige dependencies door npm install uit te voeren. Start vervolgens de ontwikkelserver via npm run dev. Zodra de server actief is, kun je de applicatie openen in je browser op http://localhost:5173.
+Clone eerst de repository via het volgende commando: git clone https://github.com/BilalB01/Web_Advanced.git. Navigeer daarna naar de map met cd rickmorty-explorer. Installeer de nodige dependencies door npm install uit te voeren. Start vervolgens de ontwikkelserver via npm run dev. Zodra de server actief is, kun je de applicatie openen in je browser op http://localhost:5173.
 
 
 V. Screenshots van de applicatie
