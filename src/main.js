@@ -89,16 +89,36 @@ themaKnop.addEventListener("click", () => {
 const scrollBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 600) {
-    scrollBtn.style.display = 'block';
-  } else {
-    scrollBtn.style.display = 'none';
-  }
+    if (window.scrollY > 600) {
+        scrollBtn.style.display = 'block';
+    } else {
+        scrollBtn.style.display = 'none';
+    }
 });
 
 scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 
 
+const suggestieForm = document.getElementById("suggestieForm");
+const suggestieInput = document.getElementById("suggestieInput");
+const formFeedback = document.getElementById("formFeedback");
+
+suggestieForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const naam = suggestieInput.value.trim();
+
+    if (naam.length < 2) {
+        formFeedback.textContent = "De naam moet minstens 2 tekens bevatten.";
+        return;
+    }
+
+    let suggesties = JSON.parse(localStorage.getItem("suggesties")) || [];
+    suggesties.push(naam);
+    localStorage.setItem("suggesties", JSON.stringify(suggesties));
+
+    formFeedback.textContent = `Bedankt! We voegen "${naam}" binnenkort toe 😉`;
+    suggestieForm.reset();
+});
