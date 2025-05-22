@@ -173,3 +173,7 @@ MDN: https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll
 Stack Overflow: https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll
 
 
+Auteur
+Het werd gemaakt door Bilal Bouchta voor het vak Web Advanced aan Erasmushogeschool Brussel
+
+
