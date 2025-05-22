@@ -61,10 +61,9 @@
   }
 
   :root {
-    --bg-kleur: #ffffff;
-    --tekst-kleur: #000000;
-    --kaart-kleur: #f4f4f4;
+    --bg-kleur: #ff6f00;
   }
+  
   
   body.donker {
     --bg-kleur: #1e1e1e;
@@ -265,8 +264,8 @@
   
   .card:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 50px #39ff14;
-    border: 2px solid #39ff14;
+    box-shadow: 0 0 1000px #39ff14;
+    border: 6px solid #39ff14;
   }
 
   .card-inhoud {
@@ -312,7 +311,7 @@
   .card p {
     font-size: 1.05rem;     
     margin: 0.3rem 0;
-    color: var(--tekst-kleur);
+    color: whitesmoke;
     line-height: 1.4;
   }
   
