@@ -19,15 +19,19 @@ const toonPersonages = (lijst, container) => {
         const badgeClass = `status-badge status-${status === "unknown" ? "unknown" : status}`;
 
         card.innerHTML = `
-            <img src="${image}" alt="${name}"><h3>${name}</h3>
-            <div class="${badgeClass}">${status}</div>
-            <p><strong>Soort:</strong> ${species}</p>
-            <p><strong>Geslacht:</strong> ${gender}</p>
-            <p><strong>Afkomst:</strong> ${origin.name}</p>
-            <button class="fav-knop" data-id="${id}" title="Markeer als favoriet">
-                 ${isFavoriet ? '★' : '☆'}
-            </button>
-             `;
+        <div class="card-inhoud">
+        <img src="${image}" alt="${name}">
+        <h3>${name}</h3>
+        <div class="${badgeClass}">${status}</div>
+        <p><strong>Soort:</strong> ${species}</p>
+        <p><strong>Geslacht:</strong> ${gender}</p>
+        <p><strong>Afkomst:</strong> ${origin.name}</p>
+        </div>
+        <button class="fav-knop" data-id="${id}" title="Markeer als favoriet">
+        ${isFavoriet ? '★' : '☆'}
+        </button>
+        `;
+
 
 
         container.appendChild(card);
@@ -89,30 +93,26 @@ export const activeerZoekfunctie = (characters, zoekInput, container, sorteerSel
         const sorteerWaarde = sorteerSelect.value;
         const statusWaarde = statusFilter.value;
         const genderWaarde = geslachtFilter.value;
-      
+
         let resultaat = characters.filter(character =>
-          character.name.toLowerCase().includes(zoekterm)
+            character.name.toLowerCase().includes(zoekterm)
         );
-      
-        // ✅ Filter op status (als gebruiker iets koos)
+
         if (statusWaarde !== "default" && statusWaarde !== "alle") {
-          resultaat = resultaat.filter(char => char.status === statusWaarde);
+            resultaat = resultaat.filter(char => char.status === statusWaarde);
         }
-      
-        // ✅ Filter op geslacht (als gebruiker iets koos)
+
         if (genderWaarde !== "default" && genderWaarde !== "alle") {
-          resultaat = resultaat.filter(char => char.gender === genderWaarde);
+            resultaat = resultaat.filter(char => char.gender === genderWaarde);
         }
-      
-        // ✅ Sorteer (alleen als gebruiker iets koos)
+
         if (sorteerWaarde !== "default") {
-          resultaat = sortCharacters(resultaat, sorteerWaarde);
+            resultaat = sortCharacters(resultaat, sorteerWaarde);
         }
-      
-        // ✅ Toon het resultaat
+
         toonPersonages(resultaat, container);
-      };
-      
+    };
+
 
 
     zoekInput.addEventListener('input', updateResultaat);
